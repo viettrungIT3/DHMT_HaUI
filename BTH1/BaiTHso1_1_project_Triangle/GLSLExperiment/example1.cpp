@@ -15,7 +15,7 @@ GLuint program;
 
 typedef vec2 point2;
 // Số các đỉnh của tập các đoạn thẳng
-const int NumPoints = 6;
+const int NumPoints = 24;
 
 // Mảng các đỉnh của hình cần vẽ
 point2 points[NumPoints];
@@ -27,17 +27,63 @@ void generateGeometry( void )
 	//points[1] = point2( 0.0, 0.5 );
 	//points[2] = point2( 0.5, -0.5 );
 
-    // Hình chữ nhật được cấu tạo từ tam giác 1 và tam giác 2
-    // Chỉ rõ các đỉnh cho một tam giác 1
-    points[0] = point2(-0.5, -0.5);
-    points[1] = point2(0.5, 0.5);
-    points[2] = point2(-0.5, 0.5);
+    //// Hình chữ nhật được cấu tạo từ tam giác 1 và tam giác 2
+    //// Chỉ rõ các đỉnh cho một tam giác 1
+    //points[0] = point2(-0.5, -0.5);
+    //points[1] = point2(0.5, 0.5);
+    //points[2] = point2(-0.5, 0.5);
 
-    // Chỉ rõ các đỉnh cho một tam giác 2
-    points[3] = point2(-0.5, -0.5);
-    points[4] = point2(0.5, 0.5);
-    points[5] = point2(0.5, -0.5);
+    //// Chỉ rõ các đỉnh cho một tam giác 2
+    //points[3] = point2(-0.5, -0.5);
+    //points[4] = point2(0.5, 0.5);
+    //points[5] = point2(0.5, -0.5);
 	
+    // Hình quạt
+    int index = 0;
+    points[index++] = point2(-0.433, 0.24);
+    points[index++] = point2(-0.353, 0.364);
+    points[index++] = point2(0, 0);
+
+    points[index++] = point2(-0.353, 0.354);
+    points[index++] = point2(-0.25, 0.443);
+    points[index++] = point2(0, 0);
+
+    points[index++] = point2(-0.25, 0.433);
+    points[index++] = point2(-0.129, 0.493);
+    points[index++] = point2(0, 0);
+
+    points[index++] = point2(-0.129, 0.483);
+    points[index++] = point2(0, 0.52);
+    points[index++] = point2(0, 0);
+
+    points[index++] = point2(0, 0.52);
+    points[index++] = point2(0.129, 0.483);
+    points[index++] = point2(0, 0);
+
+    
+    points[index++] = point2(0.129, 0.493);
+    points[index++] = point2(0.25, 0.433);
+    points[index++] = point2(0, 0);
+
+    points[index++] = point2(0.25, 0.443);
+    points[index++] = point2(0.353, 0.354);
+    points[index++] = point2(0, 0);
+
+    points[index++] = point2(0.353, 0.364);
+    points[index++] = point2(0.433, 0.24);
+    points[index++] = point2(0, 0);
+
+    /*int index = 0, x1 = 0, y1 = 0.5, x2, y2;
+    for (int i = 0; i < 3; i++)
+    {
+        points[index++] = point2(x1, y1);
+        x2 = x1 * cos(M_PI / 12) - y1 * sin(M_PI / 12);
+        y2 = sqrt(0.25 - x2 * x2);
+        points[index++] = point2(x2, y2);
+        points[index++] = point2(0, 0);
+        x1 = x2;
+        y1 = y2;
+    }*/
 	
 }
 
