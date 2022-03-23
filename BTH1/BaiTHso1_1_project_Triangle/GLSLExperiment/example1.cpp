@@ -15,17 +15,28 @@ GLuint program;
 
 typedef vec2 point2;
 // Số các đỉnh của tập các đoạn thẳng
-const int NumPoints = 3;
+const int NumPoints = 6;
 
 // Mảng các đỉnh của hình cần vẽ
 point2 points[NumPoints];
 
 void generateGeometry( void )
 {
-	// Chỉ rõ các đỉnh cho một tam giác
-	points[0] = point2( -0.5, -0.5 );
-	points[1] = point2( 0.0, 0.5 );
-	points[2] = point2( 0.5, -0.5 );
+	//// Chỉ rõ các đỉnh cho một tam giác
+	//points[0] = point2( -0.5, -0.5 );
+	//points[1] = point2( 0.0, 0.5 );
+	//points[2] = point2( 0.5, -0.5 );
+
+    // Hình chữ nhật được cấu tạo từ tam giác 1 và tam giác 2
+    // Chỉ rõ các đỉnh cho một tam giác 1
+    points[0] = point2(-0.5, -0.5);
+    points[1] = point2(0.5, 0.5);
+    points[2] = point2(-0.5, 0.5);
+
+    // Chỉ rõ các đỉnh cho một tam giác 2
+    points[3] = point2(-0.5, -0.5);
+    points[4] = point2(0.5, 0.5);
+    points[5] = point2(0.5, -0.5);
 	
 	
 }
@@ -65,7 +76,8 @@ void display( void )
 {
 	// All drawing happens in display function
     glClear( GL_COLOR_BUFFER_BIT );                /* Xóa bộ đệm màu màn hình bằng màu thiết lập bởi glClearColor() - Xóa màn hình*/
-    glDrawArrays( GL_LINE_LOOP, 0, NumPoints );    /*Vẽ các đoạn thẳng*/
+    //glDrawArrays( GL_LINE_LOOP, 0, NumPoints );    /*Vẽ các đoạn thẳng*/
+    glDrawArrays(GL_TRIANGLES, 0, NumPoints );    /*Tô đậm nền*/
     glFlush();									   /* Đẩy việc thực thi các lệnh OpenGL đến phần cứng đồ họa - thực thi lệnh OpenGL trong thời gian hữu hạn*/
 }
 
